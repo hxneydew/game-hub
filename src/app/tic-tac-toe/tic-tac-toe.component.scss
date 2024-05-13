@@ -1,0 +1,76 @@
+button:disabled {
+  color: #000000;
+}
+
+.active {
+  font-size: 5rem;
+  opacity: 1;
+  background-color: transparent;
+  border: none;
+}
+
+.banner {
+  position: absolute;
+  margin-top: 9rem;
+  margin-left: -5rem;
+  width: 35rem;
+  height: 8rem;
+  background-color: rgb(247, 209, 215);
+  text-align: center;
+  opacity: 0.9;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1rem;
+  background: aliceblue;
+  height: 26rem;
+  width: 26rem;
+}
+
+.grid-item {
+  text-align: center;
+  align-content: center;
+  background: #5d5d5d;
+  height: 8rem;
+  width: 8rem;
+}
+
+.hidden-button {
+  cursor: pointer;
+  font-size: 5rem;
+  opacity: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.hidden-button:hover {
+  opacity: 0.3;
+}
+
+.margin-divider {
+  margin-top: 2rem;
+}
+
+.timer {
+  animation: blinker 1s linear infinite;
+}
+
+.opps-timer {
+  animation: opps-blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+    color: #ffffff;
+  }
+}
+
+@keyframes opps-blinker {
+  50% {
+    opacity: 0;
+    color: #ff0000;
+  }
+}

@@ -1,0 +1,15 @@
+.container {
+  border: 1px solid purple;
+  height: 15rem;
+  width: 15rem;
+  margin: 0 2rem;
+}
+
+.container:hover {
+  transition: all 230ms ease-out;
+  transform: scale(1.2);
+}
+
+.first-item {
+  margin-left: -6rem;
+}

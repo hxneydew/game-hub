@@ -1,0 +1,57 @@
+<div class="flex align-center justify-center">
+  <h1 class="white-text font-48">Tic Tac Toe</h1>
+</div>
+<div class="auto-margin grid">
+  @for(i of grid; track $index) {
+  <div class="grid-item">
+    @if(onePlayer) {
+    <button
+      (click)="click($index)"
+      [disabled]="activated[$index] || gameOver"
+      [ngClass]="{
+            active: activated[$index],
+            timer: history[0]?.index === $index && turnCount >= 4 && !gameOver,
+            'opps-timer': history[1]?.index === $index && turnCount >= 4 && !gameOver,
+            'hidden-button': !activated[$index],
+          }"
+    >
+      @if(activated[$index]) {
+      {{ checkedBoxes[$index] }}
+      } @else { X }
+    </button>
+    } @else{
+    <button
+      (click)="click($index, xTurn ? 'X' : 'O'); togglePlayerTurn()"
+      [disabled]="activated[$index] || gameOver"
+      [ngClass]="{
+            active: activated[$index],
+            timer: history[0]?.index === $index && turnCount >= 8 && !gameOver,
+            'hidden-button': !activated[$index],
+        }"
+    >
+      @if(activated[$index]) {
+      {{ checkedBoxes[$index] }}
+      } @else if(xTurn) { X } @else { O }
+    </button>
+    }
+  </div>
+  } @if(gameOver){
+  <div class="banner align-center">
+    <h2>{{ winner }} wins!</h2>
+  </div>
+  }
+</div>
+<div class="flex align-center justify-center margin-divider">
+  <div class="margin-auto">
+    <app-button
+      (clicked)="togglePlayerMode()"
+      [buttonText]="onePlayer ? 'Two players' : 'One player'"
+      [variant]="ButtonVariant.DECORATIVE"
+    />
+    <app-button
+      (clicked)="resetBoard()"
+      [buttonText]="'Reset'"
+      [variant]="ButtonVariant.DECORATIVE"
+    />
+  </div>
+</div>

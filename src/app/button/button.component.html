@@ -1,0 +1,14 @@
+@switch (variant) { @case(ButtonVariant.DECORATIVE) {
+<button (click)="onClick()" class="button-text-decorative">
+  {{ buttonText }}
+</button>
+} @case(ButtonVariant.HEADER) {
+<button (click)="onClick()" class="button-text-header">
+  {{ buttonText }}
+</button>
+
+} @default {
+<button (click)="onClick()" class="button-text-default">
+  {{ buttonText }}
+</button>
+} }

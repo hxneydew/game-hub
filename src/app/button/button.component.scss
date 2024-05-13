@@ -1,0 +1,68 @@
+.button-text-default {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 8px;
+  margin: 0 8px;
+  font-size: 0.8rem;
+}
+
+.button-text-default:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+  transition: all 230ms ease-out;
+}
+
+.button-text-decorative {
+  --b: 0.2rem; /* border thickness */
+  --s: 0.45em; /* size of the corner */
+  --color: aliceblue;
+  --_p: var(--s);
+
+  padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
+  color: var(--color);
+  background: conic-gradient(
+      from 90deg at var(--b) var(--b),
+      #0000 90deg,
+      var(--color) 0
+    )
+    var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
+    calc(100% - var(--b) - 2 * var(--_p));
+  transition: 0.3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: 0.6em;
+  font-size: 0.8rem;
+  border: 0;
+  cursor: pointer;
+  margin: 0.5rem 1rem;
+  min-width: 10rem;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-text-decorative:hover {
+  --_p: 0px;
+  outline-color: rgb(247, 209, 215);
+  outline-offset: 0.1rem;
+}
+
+.button-text-decorative:active {
+  background: rgb(247, 209, 215);
+}
+
+.button-text-header {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+
+.button-text-header:hover {
+  --pretty-pink: rgb(240, 158, 209);
+  color: rgb(110, 71, 95);
+  text-shadow: 0 1px 0 var(--pretty-pink), 0 2px 0 var(--pretty-pink),
+    0 3px 0 var(--pretty-pink), 0 4px 0 var(--pretty-pink);
+}
